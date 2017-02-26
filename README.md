@@ -24,14 +24,14 @@ Things I referred to in the talk:
 Installing
 ----------
 
-```#install pre-requisites
-npm install -g typescript
-npm install -g tslint
-npm install -g eslint
+    #install pre-requisites
+    npm install -g typescript
+    npm install -g tslint
+    npm install -g eslint
 
-#go to each folder and run:
-npm install
+    #go to each folder and run:
+    npm install
 
-#install TypeScript, TSLint, and ESLint extensions to VS Code```
+    #install TypeScript, TSLint, and ESLint extensions to VS Code
 
 While the instructions above work, probably, just know that this code is only good enough to be loaded in VS Code and inspected therein.
