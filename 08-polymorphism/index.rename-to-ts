@@ -1,0 +1,17 @@
+interface State {}
+
+enum InstructionType
+{
+  CpyValue,
+  CpyRegister,
+  Inc,
+  Dec,
+  JnzValue,
+  JnzRegister
+}
+
+interface Instruction {
+  type: InstructionType,
+  arg1: any,
+  arg2: any
+}

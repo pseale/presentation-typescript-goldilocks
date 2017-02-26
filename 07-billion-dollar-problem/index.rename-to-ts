@@ -1,0 +1,10 @@
+interface Instruction {}
+interface State {}
+
+//calling functions with garbage data?
+process(null, null)
+
+function process(state: State, instruction: Instruction): State {
+  return null
+}
+

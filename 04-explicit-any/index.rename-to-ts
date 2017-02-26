@@ -1,0 +1,29 @@
+function commonMistakes() {
+  //the billion-dollar mistake - allowing null
+  process(null, null)
+
+  //the jQuery problem
+  const theJQueryProblem = "calling method with not enough, or too many, parameters"
+  process({}, {})
+  process({}, {})
+
+  //dumb mistakes
+  function processExample4(state, instruction) {
+      processCpyValue(state, instruction) //whoops, we forgot to return!
+  }
+}
+
+function process(state, instruction) {
+  if (isCpyValue(instruction)) {
+    return processCpyValue(state, instruction)
+  }
+}
+
+function isCpyValue(instruction) {
+  return true
+}
+
+function processCpyValue(state, instruction) {
+  return state //TODO-implement
+}
+

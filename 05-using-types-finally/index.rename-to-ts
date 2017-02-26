@@ -1,0 +1,20 @@
+interface Instruction {}
+interface State {}
+
+//calling functions with garbage data?
+process({}, {})
+process({}, {})
+
+function process(state: State, instruction: Instruction): State {
+  if (isCpyValue(instruction)) {
+    return processCpyValue(state, instruction)
+  }
+}
+
+function isCpyValue(instruction: Instruction): boolean {
+  return true
+}
+
+function processCpyValue(state: State, instruction: Instruction): State {
+  return state //TODO-implement
+}

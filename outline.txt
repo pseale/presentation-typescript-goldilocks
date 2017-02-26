@@ -1,0 +1,101 @@
+* TypeScript: a tale of Goldilocks and the Three Bears
+  - except this time Mama Bear's porridge is too cold, and Papa Bear's porridge is just right
+
+* Why are you here
+  - your goals
+  - my goal #1 - make you think about types
+  - my goal #2 - show you some TypeScript
+
+* Authority
+  - I understand types
+  - I've seen too much
+  - Some of you have written more TypeScript than me, so feel free to jump in
+
+* Let's walk from type-less JS to TypeScript, in steps
+
+* Explain the problem: Step 00: We live in the hinterlands beyond all knowledge, where wild beasts prowl and heroes of legend rise up and perform deeds of great reknown. The land of untyped JavaScript
+  - life is so hard
+
+* Step 1: "use strict" - Baby bear's porridge - too cold
+  - ~ES5 (2009?)
+  - warns you at runtime - better error messages--if you see them
+  - can't hurt to "use strict"
+  - porridge is too cold!
+
+* Step 2: ESLint - Mama bear's porridge - too cold, but better!
+  - how many of you use either 
+    a) Resharper
+    b) Resharper Solution-wide analysis
+    c) StyleCop/FxCop rules
+    d) Roslyn analyzers
+  - how many of you are angry at the rules/suggestions provided by the above?
+  - what do you do when you don't like the suggestions
+  - ESLint warns you about both serious things and lack of semicolons
+  - if you can't get TypeScript in, at least work ESLint into your build
+  - ESLint summary:
+    - if you don't have TypeScript, definitely use it, because:
+      - gives VERY early feedback - both as part of CI build, from CLI, and even in editor
+  - but is the porridge hot enough?
+
+
+* Step 3: TypeScript: Papa bear's porridge - hot!
+  - this is bare minimum TypeScript
+  - can immediately see more problems than my ESLint configurations
+  - very carefully explain function with 2 params, all callers 
+
+* Step 4: Explicit any
+  - forces us to select a type
+  - easy way out: make everything "any" explicitly
+  - did that help?
+  - ok so small step: just naming types - it helped
+  - by the way, when was the last time I explicitly compiled my TypeScript? Lesson: immediate feedback is good
+  - This is the stuff developers set up watch-es for
+
+* Step 5: 
+  - the porridge is piping hot
+  - let's sit down again with the problem
+  - focus on how we are going to flesh out State and Instruction - not implementation process
+  - State is straightforward
+  - With Instruction, we need
+    - name/type of Instruction
+    - the first argument
+    - the second argument
+    - how can we use a type that can hold either int values and register names? 
+
+* Step 6:
+  - What you saw above is TypeScript, but is roughly the same level of support as what C# gives you
+  - In C#, we're not using types either, and I'll show you where I see it the most
+  - WELCOME TO VISUAL STUDIO
+  - (show controller, show Razor file)
+  - Anything look wrong about this?
+    - It's all garbage, that's what
+  - (Add @model at top of file, watch it all turn red)
+  - add properties, delete dead code
+  - lesson: use the stuff you have. C# lets you use dynamic types, but there's a reason it is frowned upon.
+    - Once you start making classes, you'll have two new problems: 1) where to put them, 2) what to name them. Inner classes solve both questions.
+  - Porridge is still not piping hot enough!
+
+* Step 7:
+  - Let's focus on that one line where we passed in "null" and nothing errored
+  - Solve it the cheap way: just add |null to everything. We're done!
+  - Ok, when do you actually need |null ? Everything you don't control
+  - When does this help?
+  - Porridge - bubbling now, I'm honestly not even sure it's porridge anymore
+
+* Step 8: 
+  - I'm not sure it's Papa Bear's porridge anymore, I think it's Uncle Slava the Math Professor Bear's porridge now
+  - nature of polymorphism
+  - how would you solve parsing seven different types of "Instruction"s in C#/OOP terms?
+    - abstract base class or shared interface, right?
+  - (FUNCTIONAL PROGRAMMING TALK)
+
+* Summary/takeaways
+  - porridge can never be too hot
+  - use the features TypeScript and C# give you
+  - if you don't "lean on the compiler", you write an army of unit tests to compensate, and writing tests is misery
+  - think about the term "lean on the compiler"
+
+
+
+
+

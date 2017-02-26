@@ -1,0 +1,13 @@
+{
+  "name": "03-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.6"
+  }
+}

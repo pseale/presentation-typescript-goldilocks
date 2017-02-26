@@ -1,0 +1,8 @@
+﻿@using WebApplication1.Controllers
+@model Home2Controller.HomeIndexViewModel
+
+@foreach (var register in Model.Registers)
+{
+    <div>register name: @register.Name</div>
+    <div>register value: @register.Value</div>
+}
